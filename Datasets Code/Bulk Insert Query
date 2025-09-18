@@ -1,1 +1,8 @@
 
+Truncate table bronze.crm_cust_info;
+Go
+Bulk insert bronze.crm_cust_info
+from "C:\Users\10731565\Downloads\sql-data-warehouse-project\sql-data-warehouse-project\datasets\source_crm\cust_info"
+with( firstrow=2,fieldterminator=',')
+
+Select * from bronze.crm_cust_info
